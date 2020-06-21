@@ -1,6 +1,8 @@
-package com.sda.javapoz24;
+package com.sda.javapoz24.model;
 
 import lombok.*;
+
+// DAO - DATA ACCESS OBJECT - obiekt który zarządza danymi w bazie (manager)
 
 // Getter, Setter, Data, AllArgsConstructor, ToString, EqualsAndHashCode, NoArgsConstructor
 //@Getter

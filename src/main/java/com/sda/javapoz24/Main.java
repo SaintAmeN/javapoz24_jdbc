@@ -28,7 +28,8 @@ public class Main {
             System.out.println("Podaj komendę [insert,list,]");
             command = scanner.nextLine();
 
-            if (command.startsWith("insert")) {                   // insert Paweł Gaweł 20 true MALE
+            if (command.startsWith("insert")) {
+                // insert Paweł Gaweł 20 true MALE
                 // 0      1     2     3  4    5
                 String[] words = command.split(" ");
                 Student student = Student.builder()
@@ -41,11 +42,17 @@ public class Main {
 
                 dao.insertStudent(student);
             } else if (command.startsWith("list")) {
+                // list
                 List<Student> list = dao.getAllStudents();
 
                 System.out.println("Rekordy: ");
                 list.forEach(System.out::println); // wypisz rekordy na ekran (linia pod linią)
                 System.out.println(); // dopisz jedną linię odstępu
+            }else if(command.startsWith("delete")){
+                // delete 1
+                String[] words = command.split(" ");
+
+                dao.deleteStudent(Long.parseLong(words[1]));
             }
 
         } while (!command.equalsIgnoreCase("quit"));

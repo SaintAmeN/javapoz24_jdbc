@@ -91,4 +91,16 @@ public class StudentDao {
 
         return students;
     }
+
+    public void deleteStudent(long identifier){
+        try (Connection connection = connector.createConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(StudentQuerries.DELETE_STUDENT);
+            preparedStatement.setLong(1, identifier); //wstawiamy identyfikator usuwanego rekrodu
+
+            int affectedRecords = preparedStatement.executeUpdate();
+            System.out.println("Usuniętych rekordów: " + affectedRecords);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 }

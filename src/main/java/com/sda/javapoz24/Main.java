@@ -18,6 +18,7 @@ public class Main {
         // 4. Tworzymy DAO
         // -- test (weryfikacja że tabela i baza się tworzy)
         // 5. Tworzymy (zapytania+) metodę insert
+        // -- dalszy rozwój obsługi metod crud
 
         StudentDao dao = new StudentDao(new MysqlDBConnection());
         Scanner scanner = new Scanner(System.in);

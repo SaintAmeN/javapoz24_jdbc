@@ -35,6 +35,7 @@ public class StudentDao {
         }
     }
 
+    // C
     public void insertStudent(Student student) {
         // dzięki takiemu zapisowi, obiekt connection wywoła metodę close przed zakończeniem/zamykającą klamrą try
         try (Connection connection = connector.createConnection()) {
@@ -63,6 +64,7 @@ public class StudentDao {
         }
     }
 
+    // R
     public List<Student> getAllStudents() {
         List<Student> students = new ArrayList<>();
         try (Connection connection = connector.createConnection()) {
@@ -92,6 +94,7 @@ public class StudentDao {
         return students;
     }
 
+    // D
     public void deleteStudent(long identifier){
         try (Connection connection = connector.createConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(StudentQuerries.DELETE_STUDENT);
@@ -103,4 +106,6 @@ public class StudentDao {
             throwables.printStackTrace();
         }
     }
+
+    // TODO: Update
 }

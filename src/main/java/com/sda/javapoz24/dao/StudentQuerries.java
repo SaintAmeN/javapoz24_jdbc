@@ -9,4 +9,10 @@ public interface StudentQuerries {
                     "`age` integer,\n" +
                     "`awarded` boolean,\n" +
                     "`gender` varchar(15));";
+
+    public static final String INSERT_STUDENT =
+            "INSERT INTO `student`\n" +
+                    "(`firstName`, `lastName`, `age`, `awarded`, `gender`) VALUES (?, ?, ?, ?, ?);";
+
+
 }

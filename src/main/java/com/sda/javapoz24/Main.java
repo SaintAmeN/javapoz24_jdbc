@@ -25,8 +25,9 @@ public class Main {
         String command;
 
         do {
-            System.out.println("Podaj komendę [insert,list,]");
+            System.out.println("Podaj komendę [insert,list,delete]");
             command = scanner.nextLine();
+            // todo: dodać metodę update
 
             if (command.startsWith("insert")) {
                 // insert Paweł Gaweł 20 true MALE

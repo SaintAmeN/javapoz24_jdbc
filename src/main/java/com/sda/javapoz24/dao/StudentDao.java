@@ -2,6 +2,7 @@ package com.sda.javapoz24.dao;
 
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
@@ -22,7 +23,8 @@ public class StudentDao {
         try {
             Connection connection = connector.createConnection();
 
-
+            PreparedStatement statement = connection.prepareStatement(StudentQuerries.CREATE_TABLE);
+            statement.execute();
 
             connection.close();
         } catch (SQLException throwables) {

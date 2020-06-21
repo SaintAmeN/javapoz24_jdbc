@@ -10,6 +10,7 @@ import lombok.*;
 //@ToString
 //@EqualsAndHashCode
 @Data //Getter, Setter ToString EqualsAndHashCode, RequiredArgsConstructor
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Student {

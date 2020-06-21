@@ -12,7 +12,7 @@ import java.util.Properties;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MysqlDBParameters {
-    private final static String PROPERTIES_PATH = "./jdbc.properties";
+    private final static String PROPERTIES_PATH = "/jdbc.properties";
 
     private String username;
     private String password;

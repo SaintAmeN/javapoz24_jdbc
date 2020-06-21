@@ -14,5 +14,8 @@ public interface StudentQuerries {
             "INSERT INTO `student`\n" +
                     "(`firstName`, `lastName`, `age`, `awarded`, `gender`) VALUES (?, ?, ?, ?, ?);";
 
+    public static final String SELECT_STUDENTS =
+            "SELECT * from `student`;";
+
 
 }

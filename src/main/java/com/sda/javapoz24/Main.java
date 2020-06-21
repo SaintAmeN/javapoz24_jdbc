@@ -5,6 +5,7 @@ import com.sda.javapoz24.dao.StudentDao;
 import com.sda.javapoz24.model.Gender;
 import com.sda.javapoz24.model.Student;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -24,10 +25,11 @@ public class Main {
         String command;
 
         do {
+            System.out.println("Podaj komendę [insert,list,]");
             command = scanner.nextLine();
 
             if (command.startsWith("insert")) {                   // insert Paweł Gaweł 20 true MALE
-                                                                  // 0      1     2     3  4    5
+                // 0      1     2     3  4    5
                 String[] words = command.split(" ");
                 Student student = Student.builder()
                         .firstName(words[1])
@@ -38,6 +40,12 @@ public class Main {
                         .build();
 
                 dao.insertStudent(student);
+            } else if (command.startsWith("list")) {
+                List<Student> list = dao.getAllStudents();
+
+                System.out.println("Rekordy: ");
+                list.forEach(System.out::println); // wypisz rekordy na ekran (linia pod linią)
+                System.out.println(); // dopisz jedną linię odstępu
             }
 
         } while (!command.equalsIgnoreCase("quit"));

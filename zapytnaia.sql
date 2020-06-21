@@ -15,3 +15,9 @@ create table if not exists `student`  (
 -- wstawianie rekordu 
 INSERT INTO `jpoz24_students_jdbc`.`student`
 (`firstName`, `lastName`, `age`, `awarded`, `gender`) VALUES (?, ?, ?, ?, ?);
+
+-- pobierz wszystkie rekordy
+SELECT * from `student`;
+
+-- usun rekord o podanym id
+DELETE FROM `jpoz24_students_jdbc`.`student` WHERE `id`=?;

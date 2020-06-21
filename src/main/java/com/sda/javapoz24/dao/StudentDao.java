@@ -3,10 +3,7 @@ package com.sda.javapoz24.dao;
 
 import com.sda.javapoz24.model.Student;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 /**
  * Gdy tworzę instancję tej klasy to moim celem jest uzyskanie dostępu do bazy.
@@ -46,7 +43,17 @@ public class StudentDao {
             preparedStatement.setBoolean(4, student.isAwarded());
             preparedStatement.setString(5, student.getGender().toString());
 
-            preparedStatement.execute();
+            int affectedRecords = preparedStatement.executeUpdate();
+            // affectedRecords - ile rekordów zostało zmienionych
+            System.out.println("Dodanych rekordów: " + affectedRecords);
+
+            ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
+            if(generatedKeys.next()){
+                Long identifier = generatedKeys.getLong(1);
+                student.setId(identifier);
+
+                System.out.println("Generated id: " + student.getId());
+            }
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();

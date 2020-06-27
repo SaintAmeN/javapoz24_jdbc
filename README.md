@@ -13,5 +13,11 @@ To run execute command:
 cd target 
 java -jar jdbc_students-1.0-SNAPSHOT.jar
 ````
+## Improvements
+Such as:
+- cleaner code
+- documentation
+
+
 ### Author
 Paweł Recław 

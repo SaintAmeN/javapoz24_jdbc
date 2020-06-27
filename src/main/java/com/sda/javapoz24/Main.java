@@ -50,11 +50,23 @@ public class Main {
                 System.out.println("Rekordy: ");
                 list.forEach(System.out::println); // wypisz rekordy na ekran (linia pod linią)
                 System.out.println(); // dopisz jedną linię odstępu
-            }else if(command.startsWith("delete")){
+            } else if (command.startsWith("delete")) {
                 // delete 1
                 String[] words = command.split(" ");
 
                 dao.deleteStudent(Long.parseLong(words[1]));
+            } else if (command.startsWith("modify")) {
+                // modify mariusz kowalski 30 true MALE 1
+                String[] words = command.split(" ");
+                Student student = Student.builder()
+                        .firstName(words[1])
+                        .lastName(words[2])
+                        .age(Integer.parseInt(words[3]))
+                        .awarded(Boolean.parseBoolean(words[4]))
+                        .gender(Gender.valueOf(words[5].toUpperCase()))
+                        .build();
+
+                dao.updateStudent(Long.parseLong(words[6]), student);
             }
 
         } while (!command.equalsIgnoreCase("quit"));

@@ -20,7 +20,9 @@ public interface StudentQuerries {
     public static final String DELETE_STUDENT =
             "DELETE FROM `student` WHERE `id`=?;";
 
-    // TODO: dopisać metodę update.
-    //  użytkownik wpisuje identyfikator obiektu i jego dane
-    //  nasatępnie program tworzy zapytanie modyfikujące treść obiektu:
+   public static final String UPDATE_STUDENT =
+           "UPDATE `student` SET `firstName` = ?, `lastName` = ?,  `age` = ?, `awarded` = ?, `gender` = ? WHERE `id` = ?;";
+
+   public static final String SELECT_BY_ID =
+           "SELECT * FROM `student` where `id` = ?;";
 }

@@ -21,3 +21,9 @@ SELECT * from `student`;
 
 -- usun rekord o podanym id
 DELETE FROM `jpoz24_students_jdbc`.`student` WHERE `id`=?;
+
+-- aktualizacja rekrodu
+ UPDATE `student` SET `firstName` = ?, `lastName` = ?,  `age` = ?, `awarded` = ?, `gender` = ? WHERE `id` = ?;
+
+-- pobierz po id
+SELECT * FROM `student` where `id` = ?;
